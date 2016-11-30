@@ -34,6 +34,9 @@ namespace MakerShield
                 potValue = pot.Read();
                 Debug.Print(potValue.ToString());
 
+                //limit the range of the potentiometer
+                pot.SetRange(100, 250);
+
                 //blink value based on value (0-1023 ms)
                 led.Write(true);
                 Thread.Sleep(potValue);
